@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>คู่มือใช้งานแดชบอร์ดร้านสหกรณ์</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #eff5f2; color: #173e36;
+           font: 16px/1.6 Tahoma, sans-serif; }
+    main { max-width: 1000px; margin: auto; padding: 24px 16px; }
+    header { background: #084f44; color: white; padding: 24px; border-radius: 18px; }
+    h1, h2, p { margin: 0 0 8px; }
+    h1 { font-size: clamp(1.4rem, 5vw, 2rem); }
+    h2 { font-size: 1.15rem; }
+    .steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+             gap: 12px; margin: 16px 0; }
+    article, .method { background: white; padding: 18px;
+                       border: 1px solid #dbe8e3; border-radius: 14px; }
+    .step { display: inline-block; background: #e2f2eb; color: #075b4f;
+            border-radius: 8px; padding: 2px 10px; margin-bottom: 8px; font-weight: bold; }
+    a { color: #075b4f; }
+    @media (max-width: 680px) { .steps { grid-template-columns: 1fr; } }
+    @media print { .back { display: none; } article { break-inside: avoid; } }
+  </style>
+</head>
+<body>
+<main>
+  <p class="back"><a href="index.html">← กลับหน้าแดชบอร์ด</a></p>
+  <header>
+    <h1>คู่มือใช้งานแดชบอร์ดร้านสหกรณ์</h1>
+    <p>ยอดขายและกำไร 5 สาขา · ม.ค.–มิ.ย. 2569</p>
+  </header>
+
+  <div class="steps">
+    <article>
+      <span class="step">1</span>
+      <h2>ดูยอดขายและกำไร</h2>
+      <p>อ่านการ์ดหน้าแรก แล้วกด <strong>ยอดรายเดือน</strong>
+         เพื่อเปิดกราฟและตารางทั้ง 6 เดือน</p>
+    </article>
+    <article>
+      <span class="step">2</span>
+      <h2>เจาะตามสาขาและหมวด</h2>
+      <p>กด <strong>กลุ่มที่ดันยอดขึ้น</strong> เลือกสาขาและค้นชื่อหมวด
+         เช่น <strong>สถานีกลาง / เครื่องดื่ม</strong>
+         แล้วกดล้างตัวกรองเพื่อกลับมาดูทั้งหมด</p>
+    </article>
+    <article>
+      <span class="step">3</span>
+      <h2>อ่านข้อเสนอและเปิดหลักฐาน</h2>
+      <p>กด <strong>ข้อเสนอเดือน ก.ค.</strong> เพื่อดูสิ่งที่ควรทดลอง
+         หรือกด <strong>ดูรายงานตรวจข้อมูล</strong> เพื่อดูวิธีจัดการข้อมูลและข้อจำกัด</p>
+    </article>
+  </div>
+
+  <section class="method">
+    <h2>อ่านตัวเลขให้ถูกขอบเขต</h2>
+    <p>ยอดสุทธิเท่ากับจำนวนขาย × ราคาต่อชิ้น − ส่วนลด
+       กำไรขั้นต้นโดยประมาณใช้เฉพาะรายการที่มีต้นทุนอ้างอิง
+       การเทียบ พ.ค. กับ มิ.ย. ใช้ยอดเฉลี่ยต่อวันเพราะจำนวนวันต่างกัน</p>
+  </section>
+</main>
+</body>
+</html>
