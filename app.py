@@ -1,4 +1,3 @@
-
 from base64 import b64encode
 from hmac import compare_digest
 from pathlib import Path
@@ -92,6 +91,7 @@ document.addEventListener("click", (event) => {
 </script>
 '''
 content = content.replace("</body>", anchor_script + "</body>", 1)
+
 st.markdown("""
 <style>
 .stApp:has(.st-key-provincial_view) { --report-menu-height: 88px; }
@@ -139,6 +139,15 @@ st.markdown("""
 }
 </style>
 """, unsafe_allow_html=True)
+
+# แยก Plotly เป็นไฟล์ที่เบราว์เซอร์แคชได้
+content = re.sub(
+    r'<script[^>]*>\s*/\*\*\s*\*\s*plotly\.js v(\d+\.\d+\.\d+)\b.*?</script>',
+    lambda match: f'<script src="https://cdn.plot.ly/plotly-{match[1]}.min.js"></script>',
+    content,
+    count=1,
+    flags=re.S,
+)
 
 with st.container(key="provincial_view"):
     html(content, height=760, scrolling=True)
