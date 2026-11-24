@@ -92,4 +92,53 @@ document.addEventListener("click", (event) => {
 </script>
 '''
 content = content.replace("</body>", anchor_script + "</body>", 1)
-html(content, height=760, scrolling=True)
+st.markdown("""
+<style>
+.stApp:has(.st-key-provincial_view) { --report-menu-height: 88px; }
+
+[data-testid="stAppViewContainer"]:has(.st-key-provincial_view),
+[data-testid="stMain"]:has(.st-key-provincial_view) {
+  overflow: hidden !important;
+}
+
+.stApp:has(.st-key-provincial_view) [data-testid="stHeader"] {
+  display: none;
+}
+
+[data-testid="stMain"]:has(.st-key-provincial_view)
+[data-testid="stHorizontalBlock"]:has([data-testid="stSelectbox"]) {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 100;
+  box-sizing: border-box;
+  height: var(--report-menu-height);
+  padding: 8px clamp(12px, 3vw, 30px);
+  background: var(--background-color, #fff);
+  border-bottom: 1px solid #dce8e4;
+  flex-wrap: nowrap !important;
+  gap: 8px;
+  align-items: center;
+}
+
+[data-testid="stMain"]:has(.st-key-provincial_view) [data-testid="stColumn"] {
+  flex: 1 1 0% !important;
+  min-width: 0 !important;
+  width: auto !important;
+}
+
+[data-testid="stMain"]:has(.st-key-provincial_view) [data-testid="stColumn"]:last-child {
+  flex: 0 0 auto !important;
+}
+
+.st-key-provincial_view iframe {
+  position: fixed;
+  inset: var(--report-menu-height) 0 auto;
+  width: 100% !important;
+  height: calc(100dvh - var(--report-menu-height)) !important;
+  border: 0;
+}
+</style>
+""", unsafe_allow_html=True)
+
+with st.container(key="provincial_view"):
+    html(content, height=760, scrolling=True)
